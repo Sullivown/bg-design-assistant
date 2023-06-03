@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 type ButtonProps = {
 	children: ReactNode;
-	className: string;
+	className?: string;
 };
 
 export default function Button({ children, className }: ButtonProps) {
