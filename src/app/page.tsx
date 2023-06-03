@@ -4,7 +4,7 @@ import Section from '@/elements/Section';
 export default function Home() {
 	return (
 		<Section className='space-y-10'>
-			<h2 className='text-center'>
+			<h2 className='text-center font-semibold text-2xl'>
 				Welcome to Board Game Design Assistant!
 			</h2>
 			<p>Some intro text</p>
