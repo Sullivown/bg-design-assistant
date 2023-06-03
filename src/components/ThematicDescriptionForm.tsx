@@ -37,7 +37,9 @@ export default function ThematicDescriptionForm() {
 					</div>
 				</div>
 				<div className='flex flex-row justify-end'>
-					<Button>Submit</Button>
+					<button className='px-4 py-5 rounded-lg bg-pink hover:bg-pink-dark text-white text-xl'>
+						Submit
+					</button>
 				</div>
 			</div>
 		</form>

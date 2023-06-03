@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import Section from '@/elements/Section';
 
 export default function GameDetails() {
 	return (
-		<Section className='flex flex-col items-center space-y-10 mb-5'>
+		<section className='flex flex-col justify-center content-center bg-white w-full max-w-7xl p-4 sm:p-6 lg:p-8 rounded-lg min-h-full space-y-10 mb-5'>
 			<h3 className='text-center text-xl'>Suggestion 1</h3>
 			<Image
 				className='border'
@@ -59,6 +58,6 @@ export default function GameDetails() {
 					totam sit commodi?
 				</p>
 			</div>
-		</Section>
+		</section>
 	);
 }
