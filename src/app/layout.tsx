@@ -1,5 +1,7 @@
 import './globals.css';
 import { Poppins } from 'next/font/google';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
@@ -16,15 +18,11 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={`flex flex-col h-screen ${poppins.className}`}>
-				<header className='flex flex-row content-center justify-center bg-dark text-white py-6'>
-					This is the header
-				</header>
+				<Header />
 				<main className='flex flex-col items-center h-full bg-main-background bg-fit bg-center bg-blend-overlay bg-dark/70 p-4 sm:p-6 lg:p-8'>
 					{children}
 				</main>
-				<footer className='flex flex-row content-center justify-center bg-dark text-white py-6'>
-					This is the footer
-				</footer>
+				<Footer />
 			</body>
 		</html>
 	);
