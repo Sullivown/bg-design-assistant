@@ -8,7 +8,7 @@ export default function Header() {
 				href='/'
 				className='flex flex-row content-center text-center flex-wrap justify-center text-white text-3xl space-x-2'
 			>
-				<WrenchScrewdriverIcon className='text-white h-8 w-8' />
+				<WrenchScrewdriverIcon className='text-pink h-8 w-8' />
 				<h1>Boardgame Design Assistant</h1>
 			</Link>
 		</header>
