@@ -1,7 +1,4 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
 	title: 'BG Design Assistant',
@@ -15,7 +12,17 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>{children}</body>
+			<body className='flex flex-col h-screen'>
+				<header className='flex flex-row content-center justify-center bg-slate-950 text-white py-6'>
+					This is the header
+				</header>
+				<main className='flex flex-col items-center h-full bg-main-background bg-fit bg-center bg-blend-overlay bg-black/70 p-4 sm:p-6 lg:p-8'>
+					{children}
+				</main>
+				<footer className='flex flex-row content-center justify-center bg-slate-950 text-white py-6'>
+					This is the footer
+				</footer>
+			</body>
 		</html>
 	);
 }
