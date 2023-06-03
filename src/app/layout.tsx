@@ -17,9 +17,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={`flex flex-col h-screen ${poppins.className}`}>
+			<body className={`flex flex-col min-h-screen ${poppins.className}`}>
 				<Header />
-				<main className='flex flex-col items-center h-full bg-main-background bg-fit bg-center bg-blend-overlay bg-dark/70 p-4 sm:p-6 lg:p-8'>
+				<main className='flex flex-col flex-1 items-center bg-main-background bg-fit bg-center bg-blend-overlay bg-dark/70 p-4 sm:p-6 lg:p-8'>
 					{children}
 				</main>
 				<Footer />
