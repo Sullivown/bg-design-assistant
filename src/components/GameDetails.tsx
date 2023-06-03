@@ -4,7 +4,7 @@ import Section from '@/elements/Section';
 export default function GameDetails() {
 	return (
 		<Section className='flex flex-col items-center space-y-10 mb-5'>
-			<h3 className='text-center text-xl'>"Suggestion 1"</h3>
+			<h3 className='text-center text-xl'>Suggestion 1</h3>
 			<Image
 				className='border'
 				src='/images/main-background.jpg'
