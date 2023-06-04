@@ -15,14 +15,17 @@ export default function ThematicPage() {
 
 	async function handleSubmit(formData: FormData) {
 		setIsLoading(true);
-		const fetchRes = await fetch('http://localhost:3000/api/random', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				Accept: 'application/json',
-			},
-			body: JSON.stringify({ userInput: 'Random!' }),
-		});
+		const fetchRes = await fetch(
+			`${process.env.DEPLOYMENT_URL}api/random`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+				},
+				body: JSON.stringify({ userInput: 'Random!' }),
+			}
+		);
 		const fetchedData = await fetchRes.json();
 		setIsLoading(false);
 		setOutput(fetchedData.game);

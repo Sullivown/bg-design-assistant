@@ -24,14 +24,17 @@ export default function ThematicPage() {
 		const dataObject = {
 			userInput: `A game with ${mechanisms} for an audience of ${audience} with a player count of ${minPlayers} to ${maxPlayers} players.`,
 		};
-		const fetchRes = await fetch('http://localhost:3000/api/mechanisms', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				Accept: 'application/json',
-			},
-			body: JSON.stringify(dataObject),
-		});
+		const fetchRes = await fetch(
+			`${process.env.DEPLOYMENT_URL}api/mechanisms`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+				},
+				body: JSON.stringify(dataObject),
+			}
+		);
 		const fetchedData = await fetchRes.json();
 		setIsLoading(false);
 		setOutput(fetchedData.game);

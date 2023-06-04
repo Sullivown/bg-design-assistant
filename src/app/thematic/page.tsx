@@ -18,14 +18,17 @@ export default function ThematicPage() {
 		const dataObject = {
 			userInput: formData.get('theme-description')?.valueOf().toString(),
 		};
-		const fetchRes = await fetch('http://localhost:3000/api/thematic', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				Accept: 'application/json',
-			},
-			body: JSON.stringify(dataObject),
-		});
+		const fetchRes = await fetch(
+			`${process.env.DEPLOYMENT_URL}api/thematic`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+				},
+				body: JSON.stringify(dataObject),
+			}
+		);
 		const fetchedData = await fetchRes.json();
 		setIsLoading(false);
 		setOutput(fetchedData.game);
