@@ -87,7 +87,7 @@ async function generateImage(imagePrompt: string) {
 	const response = await openai.createImage({
 		prompt: `${imagePrompt}. There should be no text in this image`,
 		n: 1,
-		size: '500x500',
+		size: '512x512',
 		response_format: 'b64_json',
 	});
 	return response.data.data[0].b64_json;

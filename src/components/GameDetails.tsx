@@ -8,8 +8,8 @@ export default function GameDetails({ game }: GameDetailsProps) {
 			<Image
 				className='rounded-md'
 				src={`data:image/png;base64, ${game.image}`}
-				width='500'
-				height='500'
+				width='512'
+				height='512'
 				alt={`${game.title} box art`}
 			/>
 			<div>
