@@ -1,6 +1,12 @@
-export default function ThematicDescriptionForm() {
+type ThematicDescriptionFormProps = {
+	handleSubmit: (formData: FormData) => Promise<void>;
+};
+
+export default function ThematicDescriptionForm({
+	handleSubmit,
+}: ThematicDescriptionFormProps) {
 	return (
-		<form>
+		<form action={handleSubmit}>
 			<div className='space-y-8'>
 				<h2 className='text-base text-center font-semibold leading-7 text-gray-900'>
 					Instructions
