@@ -8,11 +8,12 @@ export default function ThematicPage() {
 	);
 
 	async function handleSubmit(formData: FormData) {
-		const userInput = formData
-			.get('theme-description')
-			?.valueOf()
-			.toString();
-		const dataObject = { userInput };
+		const dataObject = {
+			thematicDescription: formData
+				.get('theme-description')
+				?.valueOf()
+				.toString(),
+		};
 		const fetchRes = await fetch('http://localhost:3000/api/thematic', {
 			method: 'POST',
 			headers: {
