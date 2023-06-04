@@ -24,17 +24,14 @@ export default function ThematicPage() {
 		const dataObject = {
 			userInput: `A game with ${mechanisms} for an audience of ${audience} with a player count of ${minPlayers} to ${maxPlayers} players.`,
 		};
-		const fetchRes = await fetch(
-			`https://bg-design-assistant.vercel.app/api/mechanisms`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json',
-				},
-				body: JSON.stringify(dataObject),
-			}
-		);
+		const fetchRes = await fetch(`api/mechanisms`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			},
+			body: JSON.stringify(dataObject),
+		});
 		const fetchedData = await fetchRes.json();
 		setIsLoading(false);
 		setOutput(fetchedData.game);

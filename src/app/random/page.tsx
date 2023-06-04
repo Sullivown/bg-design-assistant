@@ -15,17 +15,14 @@ export default function ThematicPage() {
 
 	async function handleSubmit(formData: FormData) {
 		setIsLoading(true);
-		const fetchRes = await fetch(
-			`https://bg-design-assistant.vercel.app/api/random`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json',
-				},
-				body: JSON.stringify({ userInput: 'Random!' }),
-			}
-		);
+		const fetchRes = await fetch(`/api/random`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			},
+			body: JSON.stringify({ userInput: 'Random!' }),
+		});
 		const fetchedData = await fetchRes.json();
 		setIsLoading(false);
 		setOutput(fetchedData.game);
