@@ -1,15 +1,21 @@
-export default function MechanismsForm() {
+import { FormProps } from '@/types';
+
+export default function MechanismsForm({ handleSubmit }: FormProps) {
 	return (
-		<form>
+		<form action={handleSubmit}>
 			<div className='space-y-12'>
-				<div className='mb-5'>
-					<h2 className='text-base font-semibold leading-7 text-gray-900'>
+				<div className='mb-5 space-y-8'>
+					<h2 className='text-2xl text-center font-semibold leading-7 text-gray-900'>
 						Instructions
 					</h2>
 					<p className='mt-1 leading-6 text-center'>
 						Fill out the form with details about the mechanisms you
-						want in your game and I will suggest some themes to
-						match!
+						want in your game and I will suggest an idea with a
+						theme to match!
+					</p>
+					<p className='mt-1 text-sm font-semibold leading-6 text-center'>
+						Please be patient as I have a lot to think about!
+						Requests can take around 30 - 40 seconds!
 					</p>
 					<p className='mt-1 text-sm leading-6 text-center'>
 						Please note that this information will be shared with

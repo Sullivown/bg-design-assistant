@@ -66,10 +66,10 @@ async function generateTitle(overview: string) {
 }
 
 async function generateRules(title: string, overview: string) {
-	const rulesPrompt = `Generate a board game ruleset for a game called ${title} based on an overview: ${overview}`;
+	const rulesPrompt = `Generate a board game ruleset for a game called ${title} based on an overview: ${overview}.`;
 	const rules = await requestCompletion({
 		prompt: rulesPrompt,
-		maxTokens: 500,
+		maxTokens: 800,
 	});
 	return rules;
 }

@@ -5,7 +5,7 @@ export async function POST(request: Request) {
 	const req = await request.json();
 
 	const game = await generateGame({
-		userInputType: UserInputEnums.THEMATIC,
+		userInputType: UserInputEnums.RANDOM,
 		userInput: req.userInput,
 	});
 

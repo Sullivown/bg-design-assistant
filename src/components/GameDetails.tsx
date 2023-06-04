@@ -14,11 +14,11 @@ export default function GameDetails({ game }: GameDetailsProps) {
 			/>
 			<div>
 				<h4 className='text-center text-xl mb-3'>Overview</h4>
-				<p>{game.overview}</p>
+				<p className='whitespace-pre-line'>{game.overview}</p>
 			</div>
 			<div>
 				<h4 className='text-center text-xl mb-3'>Rules</h4>
-				<p>{game.rules}</p>
+				<p className='whitespace-pre-line'>{game.rules}</p>
 			</div>
 		</section>
 	);
