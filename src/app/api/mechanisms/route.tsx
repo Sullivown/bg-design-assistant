@@ -1,6 +1,10 @@
 import { generateGame } from '@/lib/apiCalls';
 import { UserInputEnums } from '@/enums';
 
+export const config = {
+	runtime: 'edge',
+};
+
 export async function POST(request: Request) {
 	const req = await request.json();
 
