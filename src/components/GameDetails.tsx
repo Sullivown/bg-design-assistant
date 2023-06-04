@@ -1,62 +1,24 @@
 import Image from 'next/image';
+import { GameDetailsProps } from '@/types';
 
-export default function GameDetails() {
+export default function GameDetails({ game }: GameDetailsProps) {
 	return (
-		<section className='flex flex-col justify-center content-center bg-white w-full max-w-7xl p-4 sm:p-6 lg:p-8 rounded-lg min-h-full space-y-10 mb-5'>
-			<h3 className='text-center text-xl'>Suggestion 1</h3>
+		<section className='flex flex-col justify-center items-center content-center bg-white w-full max-w-7xl p-4 sm:p-6 lg:p-8 rounded-lg min-h-full space-y-10 mb-5'>
+			<h3 className='text-center text-xl'>{game.title}</h3>
 			<Image
-				className='border'
-				src='/images/main-background.jpg'
+				className=''
+				src={`data:image/png;base64, ${game.image}`}
 				width='500'
 				height='500'
-				alt='Suggestion 1 box art'
+				alt={`${game.title} box art`}
 			/>
 			<div>
 				<h4 className='text-center text-lg mb-3'>Overview</h4>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Eius placeat impedit, dolores minus velit at dicta veniam
-					excepturi facere totam rerum quam officia culpa vero
-					obcaecati nobis deleniti ex dolor Lorem ipsum dolor sit amet
-					consectetur adipisicing elit. Beatae, laboriosam eum itaque
-					dignissimos voluptatum, explicabo, deserunt commodi pariatur
-					accusamus facilis maxime repellendus? Eos perspiciatis
-					perferendis nostrum consectetur iusto molestiae cupiditate
-					necessitatibus nisi temporibus vero atque libero mollitia
-					suscipit reiciendis placeat dolores a non soluta, laudantium
-					nihil? Facere officia necessitatibus delectus? Lorem ipsum
-					dolor sit amet consectetur, adipisicing elit. Voluptatem
-					blanditiis atque totam sit commodi? Modi ipsam est magnam
-					ducimus rerum possimus et obcaecati? Earum voluptatem
-					accusantium, totam corporis, temporibus quod laboriosam
-					quibusdam nemo esse tenetur accusamus inventore praesentium
-					deserunt recusandae. Nulla soluta laboriosam sunt delectus,
-					reiciendis non maxime quaerat adipisci, voluptatibus quos
-					impedit fugiat ipsum perspiciatis laudantium, tempora itaque
-					sit. Tenetur earum harum delectus eligendi sequi perferendis
-					nostrum expedita quaerat voluptatem temporibus autem quos ab
-					corporis dignissimos sunt necessitatibus obcaecati quam
-					tempora ut alias animi, laudantium, possimus iste! Amet
-					suscipit placeat totam velit iusto magni veritatis et harum
-					non similique.nihil? Facere officia necessitatibus delectus?
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-					Voluptatem blanditiis atque totam sit commodi? Modi ipsam
-					est magnam ducimus rerum possimus et obcaecati? Earum
-					voluptatem accusantium, totam corporis, temporibus quod
-					laboriosam quibusdam nemo esse tenetur accusamus inventore
-					praesentium deserunt recusandae. Nulla soluta laboriosam
-					sunt delectus, reiciendis non maxime quaerat adipisci,
-					voluptatibus quos impedit fugiat ipsum perspiciatis
-					laudantium, tempora itaque sit. Tenetur earum harum delectus
-					eligendi sequi perferendis nostrum expedita quaerat
-					voluptatem temporibus autem quos ab corporis dignissimos
-					sunt necessitatibus obcaecati quam tempora ut alias animi,
-					laudantium, possimus iste! Amet suscipit placeat totam velit
-					iusto magni veritatis et harum non similique.nihil? Facere
-					officia necessitatibus delectus? Lorem ipsum dolor sit amet
-					consectetur, adipisicing elit. Voluptatem blanditiis atque
-					totam sit commodi?
-				</p>
+				<p>{game.overview}</p>
+			</div>
+			<div>
+				<h4 className='text-center text-lg mb-3'>Rules</h4>
+				<p>{game.rules}</p>
 			</div>
 		</section>
 	);

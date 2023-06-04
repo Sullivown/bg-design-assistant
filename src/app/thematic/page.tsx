@@ -1,11 +1,15 @@
 'use client';
 import { useState } from 'react';
 import ThematicDescriptionForm from '@/components/ThematicDescriptionForm';
+import GameDetails from '@/components/GameDetails';
 
 export default function ThematicPage() {
-	const [output, setOutput] = useState<{ overview: string } | undefined>(
-		undefined
-	);
+	const [output, setOutput] = useState<{
+		overview: string;
+		title: string;
+		rules: string;
+		image: string;
+	} | null>(null);
 
 	async function handleSubmit(formData: FormData) {
 		const dataObject = {
@@ -22,10 +26,10 @@ export default function ThematicPage() {
 			},
 			body: JSON.stringify(dataObject),
 		});
-		const fetchData = await fetchRes.json();
-		console.log(fetchData);
-		setOutput(fetchData);
+		const fetchedData = await fetchRes.json();
+		setOutput(fetchedData.game);
 	}
+
 	return (
 		<>
 			<section className='flex flex-col justify-center content-center bg-white w-full max-w-7xl p-4 sm:p-6 lg:p-8 rounded-lg min-h-full text-center text-2xl font-semibold mb-5'>
@@ -35,7 +39,7 @@ export default function ThematicPage() {
 				{!output ? (
 					<ThematicDescriptionForm handleSubmit={handleSubmit} />
 				) : (
-					<section>{output.overview}</section>
+					<GameDetails game={output} />
 				)}
 			</section>
 		</>
