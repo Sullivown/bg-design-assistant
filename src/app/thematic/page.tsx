@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ThematicDescriptionForm from '@/components/ThematicDescriptionForm';
 
 export default function ThematicPage() {
-	const [output, setOutput] = useState<{ userInput: string } | undefined>(
+	const [output, setOutput] = useState<{ overview: string } | undefined>(
 		undefined
 	);
 
@@ -34,7 +34,7 @@ export default function ThematicPage() {
 				{!output ? (
 					<ThematicDescriptionForm handleSubmit={handleSubmit} />
 				) : (
-					<section>{output.userInput}</section>
+					<section>{output.overview}</section>
 				)}
 			</section>
 		</>
