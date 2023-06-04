@@ -27,8 +27,6 @@ export async function generateGame({
 	// Generate box art
 	const image = await generateImage(imagePrompt);
 
-	console.log(title, overview, rules);
-
 	return {
 		title,
 		overview,
@@ -68,7 +66,7 @@ async function generateTitle(overview: string) {
 }
 
 async function generateRules(title: string, overview: string) {
-	const rulesPrompt = `Generate a board game ruleset for a game called ${title} based on an overview: ${overview}.`;
+	const rulesPrompt = `Generate a board game ruleset for a game called ${title} based on an overview: ${overview}`;
 	const rules = await requestCompletion({
 		prompt: rulesPrompt,
 		maxTokens: 500,
@@ -87,7 +85,7 @@ async function generateImagePrompt(title: string, overview: string) {
 
 async function generateImage(imagePrompt: string) {
 	const response = await openai.createImage({
-		prompt: `${imagePrompt}. There should be no text in this image.`,
+		prompt: `${imagePrompt}. There should be no text in this image`,
 		n: 1,
 		size: '500x500',
 		response_format: 'b64_json',

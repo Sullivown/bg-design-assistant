@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import ThematicDescriptionForm from '@/components/ThematicDescriptionForm';
 import GameDetails from '@/components/GameDetails';
+import Loading from '@/components/Loading';
 
 export default function ThematicPage() {
 	const [output, setOutput] = useState<{
@@ -10,8 +11,10 @@ export default function ThematicPage() {
 		rules: string;
 		image: string;
 	} | null>(null);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	async function handleSubmit(formData: FormData) {
+		setIsLoading(true);
 		const dataObject = {
 			thematicDescription: formData
 				.get('theme-description')
@@ -27,6 +30,7 @@ export default function ThematicPage() {
 			body: JSON.stringify(dataObject),
 		});
 		const fetchedData = await fetchRes.json();
+		setIsLoading(false);
 		setOutput(fetchedData.game);
 	}
 
@@ -37,7 +41,11 @@ export default function ThematicPage() {
 			</section>
 			<section className='flex flex-col justify-center content-center bg-white w-full max-w-7xl p-4 sm:p-6 lg:p-8 rounded-lg min-h-full'>
 				{!output ? (
-					<ThematicDescriptionForm handleSubmit={handleSubmit} />
+					isLoading ? (
+						<Loading />
+					) : (
+						<ThematicDescriptionForm handleSubmit={handleSubmit} />
+					)
 				) : (
 					<GameDetails game={output} />
 				)}

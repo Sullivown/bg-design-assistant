@@ -2,7 +2,7 @@ import { UserInputEnums } from './enums';
 
 export type GenerateGameTypes = {
 	userInputType: UserInputEnums;
-	userInput: string;
+	userInput?: string;
 };
 
 export type RequestCompletionTypes = {
