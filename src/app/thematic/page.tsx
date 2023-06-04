@@ -19,7 +19,7 @@ export default function ThematicPage() {
 			userInput: formData.get('theme-description')?.valueOf().toString(),
 		};
 		const fetchRes = await fetch(
-			`${process.env.DEPLOYMENT_URL}api/thematic`,
+			`https://bg-design-assistant.vercel.app/api/thematic`,
 			{
 				method: 'POST',
 				headers: {

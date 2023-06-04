@@ -25,7 +25,7 @@ export default function ThematicPage() {
 			userInput: `A game with ${mechanisms} for an audience of ${audience} with a player count of ${minPlayers} to ${maxPlayers} players.`,
 		};
 		const fetchRes = await fetch(
-			`${process.env.DEPLOYMENT_URL}api/mechanisms`,
+			`https://bg-design-assistant.vercel.app/api/mechanisms`,
 			{
 				method: 'POST',
 				headers: {

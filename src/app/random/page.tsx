@@ -16,7 +16,7 @@ export default function ThematicPage() {
 	async function handleSubmit(formData: FormData) {
 		setIsLoading(true);
 		const fetchRes = await fetch(
-			`${process.env.DEPLOYMENT_URL}api/random`,
+			`https://bg-design-assistant.vercel.app/api/random`,
 			{
 				method: 'POST',
 				headers: {
