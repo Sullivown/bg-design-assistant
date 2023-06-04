@@ -15,3 +15,7 @@ Users have the option to generate ideas in three ways:
 -   Save favourites into localStorage
 -   Print / share generated games
 -   Add option to regenerated based on an existing game generation
+
+### Favicon
+
+Tools favicon by [Icons8]("https://icons8.com")

@@ -16,7 +16,7 @@ export default function HomePage() {
 			</div>
 
 			<div>
-				<h3>Select your method:</h3>
+				<h3 className='text-center'>Select your method:</h3>
 				<div className='flex flex-row flex-wrap sm:flex-nowrap justify-center gap-x-10 gap-y-5 my-5'>
 					<Link href='/random' className='w-full sm:w-1/3'>
 						<button className='px-4 py-5 rounded-lg bg-pink hover:bg-pink-dark text-white text-xl w-full'>
