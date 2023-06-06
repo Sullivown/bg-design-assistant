@@ -2,6 +2,8 @@
 
 An app that utilises the [OpenAI API](https://platform.openai.com/) to provide board game theme, mechanism, rule set and artwork suggestions to help spark creativity and assist in your design process.
 
+You can [view it live here](https://bg-design-assistant.vercel.app/).
+
 ## Generation Methods
 
 Users have the option to generate ideas in three ways:
@@ -16,6 +18,6 @@ Users have the option to generate ideas in three ways:
 -   Print / share generated games
 -   Add option to regenerated based on an existing game generation
 
-### Favicon
+## Credits
 
-Tools favicon by [Icons8]("https://icons8.com")
+Tools favicon by [Icons8](https://icons8.com)
